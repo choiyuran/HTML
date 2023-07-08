@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09-quiz2.html</title>
+    <style>
+        #root {
+            border: 2px solid #dadada;
+            width: 1000px;
+            margin: auto;
+            
+        }
+        .header {
+            background-color: #edeaea; 
+            width: 1000px;
+            
+            margin-right: 0;
+            
+            
+        }
+        #logo {
+            text-align: center;
+            color: white;
+            width: 100px;
+            margin: auto;
+            background-color: blue;
+        }
+        .main {
+            display: flex;
+        }
+        .sideA {
+            flex: 0.5;
+            padding: 10px;
+            margin-right: 40px;
+            margin-bottom: 20px;
+            background-color: black;
+            color: white;
+            
+        }
+        .sideB {
+            flex: 4;
+            margin-bottom: 20px;
+        }
+
+        .bottom{
+            padding: 20px;
+        }
+        #copy {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="header">
+            <div id="logo">
+                <h1>LOGO</h1>
+            </div>
+        </div>
+        <div class="main">
+            <div class="sideA">
+                <p>Menu-1</p>
+                <p>Menu-2</p>
+                <p>Menu-3</p>
+            </div>
+
+            <div class="sideB">
+                <h1>Hello World</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quaerat officiis maxime harum consectetur provident perferendis, eum voluptas. Adipisci culpa labore, maiores voluptates repellendus est quibusdam fugiat quaerat ducimus laborum.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quaerat officiis maxime harum consectetur provident perferendis, eum voluptas. Adipisci culpa labore, maiores voluptates repellendus est quibusdam fugiat quaerat ducimus laborum.</p>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <hr>
+            <p id="copy">@copy</p>
+        </div>
+    </div>
+</body>
+</html>
