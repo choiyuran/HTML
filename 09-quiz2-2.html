@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09-quiz2-2.html</title>
+
+    <style>
+        #root {
+            width: 1000px;
+            border: 2px solid #dadada;
+            margin: auto;  
+            padding: 0;
+        }
+        
+        .top > h1 {
+            background-color: blueviolet;
+            color: white;
+            width: 150px;
+            height: 60px;
+            text-align: center;
+            font-size: 40px;
+            padding: 5px;
+            margin: 25px auto;
+
+        }
+        .top {
+            background-color: rgb(241, 238, 238);
+            height: 150px;
+            margin-top: 0;
+            margin-bottom: 30px;
+            
+        }
+
+        .middle {
+            display: flex;
+        }
+
+        #sideA {
+            border: 1px solid #dadada;
+            border-left: none;
+            background-color: rgb(54, 52, 52);
+            color: white;
+            box-sizing: border-box;
+            padding: 15px;
+            margin-right: 40px;
+            width: 550px;
+            height: 350px;
+            font-size: 20px;
+        }
+
+        #main {
+            margin-right: 30px;
+            font-size: 22px;
+            
+        }
+
+        #footer {
+            margin: 30px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<div id="root">
+    <div class="top">
+        &nbsp;<h1>LOGO</h1>
+    </div>
+
+    <div class="middle">
+        <div id="sideA">
+            <p>Menu-1</p>
+            <p>Menu-2</p>
+            <p>Menu-3</p>  
+        </div>
+
+        <div id="main">
+            <h1>Hello World</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, earum libero cupiditate quae molestias harum quas cum voluptas ad iure dolorum doloremque facere neque adipisci voluptate! Alias optio minima amet.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, earum libero cupiditate quae molestias harum quas cum voluptas ad iure dolorum doloremque facere neque adipisci voluptate! Alias optio minima amet.</p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <hr>
+        <p>@copy</p>
+    </div>
+</div>
+</body>
+</html>
