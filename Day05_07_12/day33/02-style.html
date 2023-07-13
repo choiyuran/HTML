@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-style.html</title>
+    <style>
+        th {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>02-style.html</h1>
+    <hr>
+    <!-- 화면에 보이는 비율에 따라 크기를 조정하는 vw/vh도 있다 -->
+    <div style="position:absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;        
+                height: 20vh;
+                background-color: rgba(255, 0, 0, 0);
+                z-index: 1;">
+    </div>
+
+    <!-- border-radius를 50%(px)로 잡을 경우 크기 상관없이 정사각형이면 원이 나온다 -->
+    <!-- border-radius 네가지로 적을 경우 시계방향(왼쪽 위 모서리부터 시작) -->
+    <div style="position:absolute;
+                top: 0;
+                left: 0;
+                width: 200px;        
+                height: 200px;
+                background-color: rgba(255, 0, 0, 0);
+                /* border-radius: 50% */
+                border-radius: 100px 50px 20px 40px;
+                z-index: 1;">       
+    </div>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th colspan="2">단위</th>
+        </tr>
+        <tr>
+            <td>크기</td>
+            <td>
+                <ul>
+                    <li>% : 백분율</li>
+                    <li>em : 배수</li>              <!-- 기본값을 기준으로 설정됨 (font-size 기본값은 16px) -->
+                    <li>px : 픽셀</li>
+                </ul>
+            </td>          
+        </tr>
+        <tr>
+            <td>색상</td>
+            <td>
+                <ul>
+                    <li>HEX : #000000</li>
+                    <li>
+                        rgb : rgb(255, 128, 0)<br>
+                        red, green, blue
+                    </li>
+                    <li>                <!-- rgba -> alpha는 투명도 지정(= opacity)/ 0~1사이의 숫자로 지정 -->       
+                        rgba : rgba(255, 255, 192, 0.5)<br>
+                        red, green, blue, alpha
+                    </li>                               
+                    <li>colorName : lightgreen</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">가시 속성</th>
+        </tr>
+        <tr>
+            <td>display</td>
+            <td>화면에 보이는 형태 지정</td>
+        </tr>
+        <tr>
+            <td>visibility</td>
+            <td>보이거나 보이지 않거나</td>
+        </tr>
+        <tr>
+            <td>opacity</td>
+            <td>투명도 조절</td>
+        </tr>
+        <tr>
+            <th colspan="2">박스 속성</th>
+        </tr>
+        <tr>
+            <td>width, height</td>
+            <td>영역의 너비와 높이를 지정</td>
+        </tr>
+        <tr>
+            <td>margin, padding</td>
+            <td>
+                테두리 바깥 여백, 테두리 안쪽 여백
+                10px (all)<br>
+                10px auto (top-bottom, left-right)<br>
+                10px 5px 5px 10px (top, right, bottom, left)
+            </td>
+        </tr>
+        <tr>
+            <td>box-sizing</td>
+            <td>
+                center-box : 영역의 크기는 가운데만 적용<br>
+                border-box : 테두리를 포함한 영역을 적용
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">테두리 속성</th>
+        </tr>
+        <tr>
+            <td>border: 두께 유형 색상</td>
+            <td>테두리를 지정</td>
+        </tr>
+        <tr>
+            <td>border-radius</td>
+            <td>테두리의 둥글기를 지정<br>
+                margin, padding과 같은 방식으로 상하좌우 지정 가능
+            </td>               
+        </tr>
+    </table>       
+</body>
+</html>
