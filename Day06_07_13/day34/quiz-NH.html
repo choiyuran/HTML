@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz-NH.html</title>
+    <style>
+        body {
+            height: 100vh;
+            margin-top: 10px;
+            font-family: 'Noto Sans KR';
+       
+        }
+        .frame {
+            width: 1300px;
+            margin: auto;
+        }
+        #top {
+            border-bottom: 1px solid black;
+        }
+        .title > p {
+            color: #0256A6;
+            font-weight: bold;
+            font-size: 1.7em;
+        }
+        .title{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 20px;
+            align-items: center;
+        }
+        .title > ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .title li:last-child{
+            color: #0256A6;
+            font-weight: bold;
+            border-left: 1px solid lightgray;
+            padding-left: 10px;
+            margin-left: 10px;
+            height: 20px;
+    
+        }
+        .nav > ul {
+            list-style: none;
+            display: flex;
+            padding-left: 0;
+            justify-content: space-between;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 5px;
+           
+        }
+        .nav li:last-child {
+            font-size: 40px;
+            line-height: 40px;
+        }
+     
+        h2 > span {
+            color: #0256A6;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 4em;
+            font-weight: 100;
+            margin-bottom: 0;
+            margin-top: 40px;
+        }
+        .logo {
+            text-align: center;
+        }
+        .logo > p {
+            color: rgb(117, 116, 116);
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        .section1 {
+            height: 450px;
+            border: 2px solid #0256A6;
+            border-radius: 20px;
+            margin-top: 25px;
+            background-color: #0256A6;
+            
+        }
+        .section1 > #left {
+            width: 860px;
+            height: 450px;
+            border: 2px solid #0256A6;
+            border-radius: 20px;
+            margin-left: -1px;
+            margin-top: -1px;
+            margin-bottom: -1px;
+            z-index: 1;
+            background-color: white;
+        }
+        .section1  h3 {
+            color: #0256A6;
+            font-size: 2em;
+            margin: 15px;
+        }
+        .section1 {
+            display: flex;
+            margin-top: 40px;
+
+        }
+        .section1 #img {
+            width: 400px;
+            height: 300px;
+            background-image: url('NH.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding: 5px;
+            margin-left: 15px;
+            margin-right: 40px;
+            margin-bottom: 10px;
+        }
+        .section1 #left2 {
+            display: flex;
+        }
+        .section1 > #left p:first-child {
+            background-color: #0256A6;
+            color: white;
+            width: 70px;
+            height: 25px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .section1 > #left p:nth-child(2) {
+            font-size: 1.8em;
+            font-weight: 150;
+            padding-right: 10px;
+        }
+        .section1 > #left p:nth-child(3) {
+            font-weight: 600;
+            color: rgb(53, 51, 51);
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+        .section1 > #left p:last-child {
+            font-size: 14px;
+        }
+        .section1 > #right {
+            color: white;
+        }
+        .section1 > #right {
+            width: 300px;
+            margin: auto;
+            font-size: 1.3em;
+            margin-bottom: 65px;
+            font-weight: 550;
+        }
+        #right > #add {
+            width: 350px;
+            text-align: right;  
+        }
+        #right > #add > p {
+            margin-top: 0;
+            margin-bottom: 2.8em;
+        }
+        #right > p:nth-child(3), p:nth-child(6) {
+            font-size: 14px;
+        }
+        .section2 {
+            display: flex;
+            margin-top: 45px;
+        }
+        .section2 > #left, .section2 > #right {
+            border: 3px solid lightgray;
+            border-radius: 14px 14px 55px 14px ;
+            box-shadow: 5px 5px 5px lightgray;
+            flex: 1;
+        }
+        .section2 > #left {
+            margin-right: 45px;
+        }
+        .section2 h3 {
+            color: #0256A6;
+            font-size: 2em;
+        }
+        .section2 > #left > p:nth-child(1) {
+            font-size: 1.6em;
+        }
+        #content {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="top">
+        <div class="title frame">
+            <p>NH농협은행</p>
+            <ul>
+                <li>Language ▼</li>
+                <li>Banking ▼</li>
+            </ul>
+        </div>
+    
+
+        <div class="nav frame">
+            <ul>
+                <li>은행안내</li>
+                <li>윤리경영</li>
+                <li>금융소비자보호</li>
+                <li>기업지배구조</li>
+                <li>경영정보</li>
+                <li>ESG 경영</li>
+                <li>채용정보</li>
+                <li>홍보센터</li>
+                <li>≡</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="logo frame">
+        <h2>사랑받는 <span>일등 민족은행</span>
+        </h2>
+       
+        <p>농업인과 고객 모두가 행복한 금융을 만들어 갑니다</p>
+    </div>
+    
+    <div class=" section1 frame">
+        <div id="left">
+            <h3>NH 뉴스</h3>
+            <div id="left2">
+                <div id="img"></div>
+                <div id="con">
+                <p>NH뉴스</p> 
+                <p>NH농협은행, 펀드가입 이벤트 실시</p>
+                <p>NH농협은행, 펀드가입 이벤트 실시</p>
+                <p>2023-07-03</p>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <div id="add">
+                <p>더보기 ></p>
+            </div>
+            <p>NH농협은행, 국민비서 서비스 출시기념 이벤트 실시</p>
+            <p>2023-07-03</p>
+            <p>----------------------------------</p>
+            
+            <p>NH농협은행, 농식품분야 성장 지원을 위한 NH농협..</p>
+            <p>2023-07-02</p>
+        </div>
+    </div>
+    <div class="section2 frame">
+        <div id="left">
+            <h3>NH농협은행 소개</h3>
+            <p>대한민국의 행복파트너!</p>
+            <p>자세히 보기 ></p>
+        </div>
+        <div id="right">
+            <h3>경영정보</h3>
+            <p>경영·재무현황 및 공시자료</p>
+            <p>자세히 보기 ></p>
+        </div>
+    </div>
+    <div class="section3 frame"></div>
+
+    <div class="footer">
+
+    </div>
+    
+    <div id="content" class="frame"></div>
+</body>
+</html>
