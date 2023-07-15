@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-mall_menubar.html</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .frame {
+            margin-top: 15px;
+            border-bottom: 1px solid #dadada;
+            border-top: 1px solid #dadada;
+        }
+        .nav {
+            width: 1260px;
+            margin: auto;          
+            
+        }
+        .nav > ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 0;
+            align-items: center;
+            margin: 3px;
+        }
+        .nav > ul > li {
+            position: relative;
+            width: 150px;
+            text-align: center;
+            /* padding: 10px; */
+        }
+        .frame > .nav > ul > li:nth-child(2) {
+            color: hotpink;
+        }
+        .frame > .nav > ul > li:first-child {
+            font-size: 2em;
+        }
+        .frame ol {
+            list-style: none;
+            padding-left: 0;
+            display: none;
+            position: absolute;
+            top: 36px;
+            left: -10px;
+            padding: 10px 0;
+            background-color: rgba(255, 127, 80, 0.267);
+        }
+        .frame ol > li {
+            text-align: left;
+            width: 150px;
+            padding: 5px;
+            padding-left: 15px;
+
+        }
+        ul > li:hover > ol {
+            display: block;
+        }
+        details ol {
+            display: block;
+            padding-left: 20px;
+            position: static;
+            width: fit-content;
+            height: fit-content;
+            list-style: decimal;
+            border: 0;
+        }
+        details li {
+            width: fit-content;
+            font-size: 1rem !important;
+            /* !important : 상속 및 선택자 상세도에 상관없이 무조건 적용 */
+        }
+    </style>
+</head>
+<body>
+    <h1>03-mall_menubar.html</h1>
+    <hr>
+    <div class="frame">
+    <div class="nav">
+            <ul>
+                <li><a href="#">≡</a></li>
+                <li><a href="#">RONA universe</a></li>
+                <li>
+                    <a href="#">남성의류</a>
+                    <ol>
+                        <li>아우터</li>
+                        <li>탑</li>
+                        <li>세트</li>
+                        <li>바텀</li>
+                        <li>악세사리</li>
+                    </ol>
+                </li>
+                <li><a href="#">아우터</a></li>
+                <li>
+                    <a href="#">탑</a>
+                    <ol>
+                        <li>니트</li>
+                        <li>셔츠</li>
+                        <li>블라우스</li>
+                        <li>후드,맨투맨</li>
+                        <li>반팔T</li>
+                        <li>긴팔T</li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">드레스</a>
+                    <ol>
+                        <li>롱/미디</li>
+                        <li>미니</li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">바텀</a>
+                    <ol>
+                        <li>팬츠</li>
+                        <li>스커트</li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">악세사리</a>
+                    <ol>
+                        <li>ER</li>
+                        <li>NC</li>
+                        <li>BC</li>
+                        <li>Etc</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <details style="width: 1260px; margin: 50px auto;">
+        <summary><b>메뉴 구성 순서</b></summary>
+        <fieldset>
+            <ol type="1">
+                <li>주 메뉴부터 구성한다 (ul, li, flex)</li>
+                <li>서브 메뉴의 한줄만 작성한다</li>
+                <li>주 메뉴와 서브메뉴는 테두리나 배경색으로 보이게 한다</li>
+                <li>서브 메뉴의 위치를 지정한다 (absolute, top, left)</li>
+                <li>서브메뉴의 여백 및 정렬, 크기를 지정한다</li>
+                <li>hover를 이용하여 마우스 올리면 나타나도록 처리한다</li>
+            </ol>
+        </fieldset>
+
+    </details>
+</body>
+</html>
