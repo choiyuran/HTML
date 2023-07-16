@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03.html</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .banner {
+            width: 1000px;
+            display: flex;
+            margin: auto;
+        }
+        .banner > .picture1 {
+            width: 500px;
+            height: 70px;
+            background-image: url('쿠팡장마.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .banner > .picture2 {
+            width: 500px;
+            height: 70px;
+            background-image: url('마이크로.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .tool {
+            width: inherit;
+            border-top: 1px solid #dadada;
+            background-color: #dadada;
+        }
+        .frame {
+            width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+        }
+        .tool .left {
+            display: flex;
+            margin-left: -15px;
+        }
+        .right {
+            display: flex;
+            margin-right: 15px;
+        }
+        .tool .left > p, .tool .right > p {
+            padding-right: 10px;
+        }
+        .top {
+            width: 1000px;
+            margin: auto;
+            display: flex;
+        }
+       .top > .left {
+            background-color: #4285f4;
+            color: white;
+            margin-right: 30px;
+            margin-left: -20px;
+            text-align: center;
+        } 
+        .top > .left > ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="root">
+        <div class="banner">
+            <div class="picture1"></div>
+            <div class="picture2"></div>
+        </div>
+
+        <div class="tool">
+            <div class="frame">
+                <div class="left">
+                    <p>즐겨찾기</p>
+                    <p>입점신청▼</p>
+                </div>
+                <div class="right">
+                    <p>로그인</p>
+                    <p>회원가입</p>
+                    <p>고객센터</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="top">
+            <div class="left">
+                <ul>
+                    <li>≡</li>
+                    <li>카테고리</li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="left">
+                    <img src="https://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png">
+                    <div class="input">
+                        <input type="search" autocomplete="off">
+                        🎙️🔍
+                    </div>
+                    <div class="right">
+                        <div class="my">
+                            <p>💁‍♀️</p>
+                            <p>마이쿠팡</p>
+                        </div>
+                        <div class="cart">
+                            <p>🛒<span>0</span></p>
+                            <p>장바구니</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav"></div>
+            </div>
+        </div>
+        <div class="main"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>
