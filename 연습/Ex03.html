@@ -53,23 +53,105 @@
             padding-right: 10px;
         }
         .top {
+            box-sizing: border-box;
             width: 1000px;
+            /* height: 120px; */
             margin: auto;
             display: flex;
         }
-       .top > .left {
+       .top > .cate {
+            width: 120px;
+            height: 120px;
             background-color: #4285f4;
             color: white;
             margin-right: 30px;
             margin-left: -20px;
             text-align: center;
         } 
-        .top > .left > ul {
+        .top > .cate a {
+            text-decoration: none;
+            cursor: pointer;
+            color: white;
+        }
+        .top > .cate > ul {
             list-style: none;
             padding-left: 0;
+            margin: 0 20px;
         }
-
-
+        .top > .cate li:first-child {
+            font-size: 3.5em;
+        }
+        .top > .logo {
+            width: 1000px;
+            margin-right: 0;
+        }
+        .top > .logo > .fir {
+            display: flex;
+            margin-top: 15px;
+        }
+        .top > .logo > .fir input, select {
+            all: unset;
+        }
+        .top > .logo > .fir input {
+            width: 330px;
+            border-left: 1px solid #dadada;
+            padding-left: 10px;
+           
+        }
+        .top > .logo > .fir select {
+            padding-left: 10px;
+        }
+        .top > .logo > .fir > .input {
+            margin-left: 20px;
+            border: 1px solid #4285f4;
+            padding-right: 10px;
+            height: 40px;
+            line-height: 40px;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+        .image {
+            margin-top: 10px;
+        }
+        .size {
+            font-size: 30px;
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+        .style {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .cartnumber {
+            background-color: #4285f4;
+            color: white;
+            font-size: 14px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        .top > .logo > .fir > .last {
+            display: flex;
+        }
+        .top > .logo > .fir > .last > .my {
+            margin-right: 10px;
+        }
+        .top > .logo > .nav > ul {
+            list-style: none;
+            display: flex;
+            margin-top: 0;
+            padding-left: 0;
+            justify-content: space-around;
+            margin-left: -30px;
+        }
+        .top > .logo > .nav a {
+            text-decoration: none;
+            cursor: pointer;
+            color: black;
+        }
+        .top > .logo > .nav a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -94,31 +176,51 @@
         </div>
 
         <div class="top">
-            <div class="left">
+            <div class="cate">
                 <ul>
                     <li>≡</li>
-                    <li>카테고리</li>
+                    <li><a href="#">카테고리</a></li>
                 </ul>
             </div>
-            <div class="right">
-                <div class="left">
-                    <img src="https://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png">
+            <div class="logo">
+                <div class="fir">
+                    <img src="https://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png" width="180px" height="45px" class="image">
                     <div class="input">
-                        <input type="search" autocomplete="off">
+                        <select name="sel" id="sel">
+                            <option value="전체">전체</option>
+                            <option value="여성패션">여성패션</option>
+                            <option value="남성패션">남성패션</option>
+                            <option value="남녀 공용 의류">남녀 공용 의류</option>
+                        </select>
+                        <input type="text" autocomplete="off" placeholder="찾고 싶은 상품을 검색해보세요!">
                         🎙️🔍
                     </div>
-                    <div class="right">
+
+                    <div class="last">
                         <div class="my">
-                            <p>💁‍♀️</p>
-                            <p>마이쿠팡</p>
+                            <p class="size">💁‍♀️</p>
+                            <p class="style">마이쿠팡</p>
                         </div>
                         <div class="cart">
-                            <p>🛒<span>0</span></p>
-                            <p>장바구니</p>
+                            <p class="size">🛒<span class="cartnumber">0</span></p>
+                            <p class="style">장바구니</p>
                         </div>
                     </div>
                 </div>
-                <div class="nav"></div>
+
+                <div class="nav">
+                    <ul>
+                        <li><a href="#">< 로켓배송</a></li>
+                        <li><a href="#">로켓프레시</a></li>
+                        <li><a href="#">쿠팡비즈</a></li>
+                        <li><a href="#">로켓직구</a></li>
+                        <li><a href="#">골드박스</a></li>
+                        <li><a href="#">와우회원할인</a></li>
+                        <li><a href="#">이벤트/쿠폰</a></li>
+                        <li><a href="#">반품마켓</a></li>
+                        <li><a href="#">착한상점 ></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="main"></div>
