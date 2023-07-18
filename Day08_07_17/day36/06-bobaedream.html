@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-bobaedream.html</title>
+    <style>
+        div {
+            box-sizing: border-box;
+        }
+        .flex {
+            display: flex;
+            flex-flow: wrap;
+            width: 726px;
+            margin: 20px auto;
+        }
+        .item {
+            width: 240px;
+            height: 180px;
+            margin: 1px;
+        }
+        .image {
+            width: 240px;
+            height: 180px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+        }
+        .item {
+            position: relative;
+            overflow: hidden;
+        }
+        .content {
+            width: 240px;
+            height: 80px;
+            position: absolute;
+            color: white;
+            display: flex;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);       /* transparent는 투명을 의미 */
+        }   
+        .content h2 {
+            font-size: 2em;
+            font-weight: 200;
+            margin-left: 10px;
+        }
+        .content p {
+            margin-left: 10px;
+            font-size: 13px;
+        }
+        .content p:first-child {
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+        .content p:last-child {
+            margin-top: 0;
+        }
+        .item:hover > .image {
+            transform: scale(120%);
+            transition-duration: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>06-bobaedream.html</h1>
+    <hr>
+
+<div class="flex">
+    <div class="item">
+        <div class="image" style="background-image: url('car1.jpg');"></div>
+        <div class="content">
+            <div class="number">
+                <h2>1</h2>
+            </div>
+
+            <div class="right">
+                <p>마이바흐 62 5.5 V12</p>
+                <p>⨀ 1918명</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="image" style="background-image: url('car2.jpg');"></div>
+        <div class="content">
+            <div class="number">
+                <h2>2</h2>
+            </div>
+
+            <div class="right">
+                <p>쉐보레(국산)리얼 뉴 콜로라..</p>
+                <p>⨀ 1419명</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="item">
+        <div class="image" style="background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-765191_2019.jpg');"></div>
+        <div class="content">
+            <div class="number">
+                <h2>3</h2>
+            </div>
+
+            <div class="right">
+                <p>페라리 로마 3.9 V8</p>
+                <p>⨀ 1173명</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="image" style="background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-766260_2019.jpg');"></div>
+        <div class="content">
+            <div class="number">
+                <h2>4</h2>
+            </div>
+
+            <div class="right">
+                <p>벤츠 마이바흐 S650</p>
+                <p>⨀ 895명</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="image" style="background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-766261_2019.jpg');"></div>
+        <div class="content">
+            <div class="number">
+                <h2>5</h2>
+            </div>
+
+            <div class="right">
+                <p>벤츠 마이바흐 S560 4매틱</p>
+                <p>⨀ 593명</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="image" style="background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-766273_2019.jpg');"></div>
+        <div class="content">
+            <div class="number">
+                <h2>6</h2>
+            </div>
+
+            <div class="right">
+                <p>롤스로이스 던 6.6 V12</p>
+                <p>⨀ 573명</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="image" style="background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-766116_2019.jpg');"></div>
+        <div class="content">
+            <div class="number">
+                <h2>7</h2>
+            </div>
+
+            <div class="right">
+                <p>BMW M5 4.4 CS</p>
+                <p>⨀ 469명</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="image" style="background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-756679_2019.jpg');"></div>
+        <div class="content">
+            <div class="number">
+                <h2>8</h2>
+            </div>
+
+            <div class="right">
+                <p>벤츠 S500L 4매틱</p>
+                <p>⨀ 467명</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="image" style="background-image: url('https://image.bobaedream.co.kr/2017/newprd/cyber-764873_2019.jpg');"></div>
+        <div class="content">
+            <div class="number">
+                <h2>9</h2>
+            </div>
+
+            <div class="right">
+                <p>벤틀리 컨티넨탈 GT 6.0 퍼스..</p>
+                <p>⨀ 466명</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
