@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07-youtube_list.html</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
+    <style>
+        /* 대부분 요소에 적용할 공통 속석을 지정하는 부분 */
+        div {
+            font-family: 'Noto Sans KR';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 여기는 각 요소의 윤곽을 잡는 부분 */
+        #root {
+            width: 1530px;
+            margin: auto;
+        }
+        .wrap {
+            display: flex;
+            flex-flow: wrap;
+        }
+        .item {
+            border: 1px dashed red;
+            margin: 30px 10px;
+            width: 360px;
+            height: 320px;
+        }
+        /* 내부 상세 요소의 배치 + 디테일 외형 */
+        .item > .image {
+            /* border: 1px dashed blue;s */
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        .item > .image > img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .item > .content {
+            /* border: 1px dashed green; */
+            height: max-content;
+            display: flex;
+        }
+        .content > .left {
+            /* border: 1px dashed skyblue; */
+            flex: 1;
+            padding-right: 10px;
+        }
+        .content > .left > img {
+            border-radius: 50%;
+            width: 100%;
+        }
+        .content > .right {
+            /* border: 1px dashed hotpink; */
+            flex: 7;
+        }
+        .content > .right > .title {
+            font-size: 1.09em;
+            font-weight: 500;
+        }
+        .content > .right > div:not(.title) {
+            color: grey;
+        }
+        .content > .right > .channel > span{
+            background-color: grey;
+            color: white;
+            display: inline-block;      /* 사이즈를 지정하고 싶은데 줄을 바꾸고 싶지 않아서 inline-block으로 설정해줌 */
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            font-size: 12px;
+            text-align: center;
+            border-radius: 50%;
+            margin-left: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>07-youtube_list</h1>
+    <hr>
+
+    <div id="root">
+        <div class="wrap">
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/1.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="icons/1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="title">[미션 임파서블:데드 레코딩 PART ONE] 2차 예고편</div>
+                        <div class="channel">ParamountKR</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 85만회</span>
+                            ·
+                            <span class="uploadTime">2개월 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/2.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="icons/2.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="title">소울리스좌 아마존 현역 마지막 댄스</div>
+                        <div class="channel">Korea volleyball sports</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 115만회</span>
+                            ·
+                            <span class="uploadTime">6개월 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/3.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="icons/3.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="title">징역 1년 6개월 구형에 이근 "사람 살리는 게 진정한 군인"/ SBS / 스브스픽</div>
+                        <div class="channel">SBS 뉴스<span>✔</span></div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 20만회</span>
+                            ·
+                            <span class="uploadTime">5시간 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/4.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="icons/4.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="title">과연 스파이더맨은 살 수 있을까?마블 <<크레이븐 더 헌터>>공식 예고편 리뷰</div>
+                        <div class="channel">무비띵크_Movie Think</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 146만회</span>
+                            ·
+                            <span class="uploadTime">3주 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/5.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="icons/5.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="title">[범죄도시3] 레전드 명장면,명대사 속 숨겨져있던 모든 비밀들ㅋㅋㅋㅋ</div>
+                        <div class="channel">엔스Ens</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 31만회</span>
+                            ·
+                            <span class="uploadTime">10일 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/6.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="icons/6.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="title">주말 중부지방 위험하다..."폭우 강도 훨씬 셀 것"[Y녹취록]/YTN</div>
+                        <div class="channel">YTN<span>✔</span></div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 4.6만회</span>
+                            ·
+                            <span class="uploadTime">2시간 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/7.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="icons/7.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="title">전 세계 화제된 어미 리트리버의 새끼 훈육법</div>
+                        <div class="channel">포크포크</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 1400만회</span>
+                            ·
+                            <span class="uploadTime">1년 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/8.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="icons/8.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="title">퍼스트 클래스탔다고 승무원한테 온갖 진상 다 부리던 손님 옆에 하필...</div>
+                        <div class="channel">지무비:G Movie</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 1173만회</span>
+                            ·
+                            <span class="uploadTime">9개월 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

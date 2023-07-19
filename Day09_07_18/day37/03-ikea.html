@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-ikea.html</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
+    <style>
+        div { 
+            font-family: 'Noto Sans KR';
+            padding: 0;
+            margin-top: 0;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            height: 1900px;
+            overflow-x: hidden;
+        }
+        .top {
+            display: flex;
+            background-color: black;
+            color: white;
+            height: 43px;
+            align-items: center;
+            font-size: 12px;
+        }
+        .top > .bestseller {
+            margin: 0;
+            margin-left: 755px;
+            margin-right: 90px;
+        }
+        .top span {
+            margin-right: 10px;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1;
+        }
+        .banner {
+            display: flex;
+            margin-top: 25px;        
+        }
+        .banner > .ham {
+            font-size: 1.5em;
+            text-align: center;
+            margin-right: 60px;
+            margin-left: 120px;
+        }
+        .banner #btn {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        .banner #btn:hover {
+            background-color: #dadada;
+            width: 40px;
+            height: 40px;
+            border-radius: 30px;
+        }
+        aside {
+            width: 480px;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            background-color: white;
+            overflow-y: scroll;
+            z-index: 1;
+        }
+        .bar {
+            padding-left: 150px;
+            margin-top: 25px;
+        }
+        aside > .bar > ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 45px;
+        }
+        #aside > .bar > .list1  {
+            font-size: 2.2em;
+            font-weight: bold;
+        }
+        #aside .list1 {
+            margin-bottom: 0;
+        }
+        #aside .list1 > li {
+            margin-bottom: 24px;
+        }
+        .deco li:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        #aside .list2 {
+            margin-top: 0;
+            margin-bottom: 13px;
+        }
+        #aside .list2 > li {
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+   
+        #aside .list3 {
+            margin-bottom: 70px;
+        }
+        #aside .list3 > li {
+            margin-bottom: 13px;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        #aside .list4 {
+            display: flex;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        #aside .list4 li {
+            font-size: 12px;
+            margin-right: 10px;
+            width: 110px;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+        #aside .list4 li:hover {
+            width: 110px;
+            height: 40px;
+            line-height: 40px;
+            border: 2px solid black;
+        }
+        #aside .list4 span {
+            font-size: 20px;
+            height: 40px;
+            line-height: 30px;
+        }
+        #aside #closebtn {
+            padding-left: 30px;
+            margin-top: 20px;
+        }
+        #aside .close {
+            display: flex;
+        }
+        #aside #closebtn {
+            margin-left: 40px;
+            margin-right: 70px;
+            margin-top: 25px;
+            font-size: 1.5em;
+        }
+        #aside #closebtn:hover {
+            background-color: #dadada;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #aside .closeimage {
+            margin-top: 30px;
+        }
+        aside.hidden {
+            left: -800px;
+        }
+
+        .banner > .ham > .menu {
+            font-size: 15px;
+        }
+        .banner > .image {
+            margin-top: 5px;
+            margin-right: 40px;
+            cursor: pointer;
+        }
+        .banner  input{
+            all: unset;
+            margin-left: 10px;
+            margin-right: 790px;
+        }
+        .banner > .sear {
+            border-radius: 40px;
+            width: 1100px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #dadada76;
+        }
+        .banner > .sear:hover {
+            background-color: #dadada;
+        }
+        .banner > .sear > .glass {
+            margin-left: 15px;
+        }
+        .banner > .login {
+            display: flex;
+            margin-left: 50px;
+            margin-top: 5px;
+            font-size: 15px
+        }
+        .banner > .login > span {
+            margin-right: 10px;
+        }
+        .banner > .login > .con > span:first-child {
+            margin-right: 10px;
+        }
+        .banner .con {
+            width: 220px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .banner .con:hover {
+            width: 220px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #dadada;
+            border-radius: 20px;
+        }
+        .banner > .login > span:nth-child(2), span:nth-child(3) {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+        }
+        .banner > .login > span:nth-child(2):hover, span:nth-child(3):hover {
+            width: 35px;
+            height: 35px;
+            background-color: #dadada;
+            border-radius: 20px;
+            line-height: 35px;
+            text-align: center;
+        }
+        
+        #menubar {
+            width: 1620px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 205px;
+            border-bottom: 1px solid #dadada76;
+        }
+        #menubar > ul {
+            list-style: none;
+            display: flex;
+            padding-left: 0;
+        }
+        #menubar > ul:first-child {
+            font-weight: bold;
+        }
+        #menubar > ul:first-child > li:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        #menubar li {
+            margin-right: 25px;
+            font-size: 15px;
+        }
+        main {
+            margin-top: 60px;
+            display: flex;
+            margin-bottom: 60px;
+        }
+        .main_image {
+            width: 1070px;
+            height: 416px;
+            margin-left: 205px;
+        }
+        .main_image > img {
+            width: 100%;
+        }
+        main > .right {
+            width: 550px;
+            height: 599px;
+            background-color: #FBD800;
+            padding: 35px;
+        }
+        main > .right > p {
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+        main > .right > p:last-child {
+            font-size: 12px;
+            font-weight: 600;
+            width: 280px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            border-radius: 40px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        .best {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        section > .flex {
+            width: 1700px;
+            display: flex;
+            margin-top: 30px;
+        }
+        section .item {
+            width: 230px;
+            height: 290px;
+            margin-right: 20px;
+            position: relative;
+        }
+        section .item:first-child {
+            background-color: #CA5008;
+            color: white;
+        }
+        section .item:first-child > .content1 {
+            margin-top: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+        section .item:first-child > .content1:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        section .item:first-child > .content2 {
+            margin-top: 160px;
+            margin-left: 35px;
+            width: 35px;
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-weight: 600;
+            text-align: center;
+            color: black;
+            background-color: white;
+        }
+        section .item:last-child {
+            width: 90px;
+            height: 290px;
+            overflow: hidden;
+        }
+        section > .flex > .item > .best_image {
+            width: 230px;
+            height: 290px;
+            background-size: 100% auto;
+            position: absolute;
+        }
+        section > .flex > .item > .best_image > .name {
+            margin-top: 215px;
+            margin-left: 75px;
+            background-color: white;
+            width: 75px;
+            height: 40px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 40px;
+            border-radius: 30px;
+        }
+        section .flex {
+            margin-bottom: 35px;
+        }
+        section {
+            width: 1620px;
+            margin-left: 210px;
+            border-bottom: 2px solid black;
+        }
+        section > .flex > .item .best_image:hover {
+            cursor: pointer;
+        }
+        section > .flex > .item .name:hover { 
+            background-color: #dadada;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="bestseller">
+            <p><span>👜</span>베스트셀러</p>
+        </div>
+        <div class="order">
+            <p><span>📞</span>쉽고 편한 전화 주문,헤이오더</p>
+        </div>
+    </div>
+
+    <header>
+        <div class="banner">
+            <div class="ham">
+                <div id="btn">≡</div>
+                <div class="menu">메뉴</div>
+            </div>
+
+            <div class="image">
+                <img src="ikea.svg">
+            </div>
+
+            <div class="sear">
+                <span class="glass">🔍</span><input type="text" autocomplete="off" placeholder="검색어 입력"><span class="camera">📸</span>
+            </div>
+        
+            <div class="login">
+                <div class="con"><span>🙎‍♂️</span>Hej!로그인 또는 가입하기</div>
+                <span>🤍</span>
+                <span>👜</span>
+            </div>
+        </div>
+    </header>
+
+    <aside id="aside" class="hidden" >
+        <div class="close">
+            <div id="closebtn">x</div>
+            <img src="ikea.svg" style="width: 95px; height: 35px;" class="closeimage">
+            
+        </div>
+        <div class="bar">
+            <ul class="list1 deco">
+                <li>모든 제품</li>
+                <li>공간별 쇼핑하기</li>
+                <li>특별한 가격</li>
+                <li>홈 액세서리</li>
+                <li>서비스</li>
+            </ul>
+
+            <ul class="list2 deco">
+                <li>신제품</li>
+                <li>아이디어</li>
+                <li>새로운 소식</li>
+            </ul>
+
+            <ul class="list3 deco">
+                <li>매장안내</li>
+                <li>쉽고 편한 전화 주문,헤이오더</li>
+                <li>IKEA Live</li>
+                <li>IKEA Family</li>
+                <li>IKEA for Business</li>
+                <li>고객지원</li>
+                <li>배송조회</li>
+                <li>내 프로필</li>
+            </ul>
+
+            <ul class="list4">
+                <li>한국어 ∨</li>
+                <li><span>🌐</span> 국가 변경</li>
+            </ul>
+        </div>
+
+    
+    </aside>
+    
+    <nav>
+        <div id="menubar">
+            <ul>
+                <li>모든 제품</li>
+                <li>공간별 쇼핑하기</li>
+                <li>특별한 가격</li>
+                <li>홈 액세서리</li>
+                <li>서비스</li>
+            </ul>
+            
+            <ul>    
+                <li>🚚 우편 번호 입력</li>
+                <li>🏭 매장 선택</li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="main_image">
+            <img src="ikea_main.jpg">
+        </div>
+        <div class="right">
+            <h2>미래를 담은 클래식한 디자인</h2>
+            <p>IKEA가 창립 80주년을 맞이하며 과거의 아이코닉한 디자인을 엄선해 다시 출시합니다. 다채로운 컬러와 새로운 소재로 재탄생한 Nytillverkad 뉘틸베르카드 컬렉션을 만나보세요.</p>
+            <p>Nytillverkad 뉘틸베르카드 컬렉션 보러 가기</p>
+        </div>
+    </main>
+
+    <section>
+        <article class="best">
+            베스트 카테고리 쇼핑하기
+        </article>
+        
+        <div class="flex">
+            <div class="item">
+                <div class="content1">IKEA 신제품 보러 가기</div>
+                <div class="content2">→</div>
+            </div>
+
+            <div class="item">
+                <div class="best_image" style="background-image: url('ikea/1.avif');">
+                    <div class="name">침실</div>
+                </div>
+                <!-- <div class="img_name">침실</div> -->
+            </div>
+
+            <div class="item">
+                <div class="best_image" style="background-image: url('ikea/2.avif');">
+                    <div class="name">수납/정리</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="best_image" style="background-image: url('ikea/3.avif');">
+                    <div class="name">홈오피스</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="best_image" style="background-image: url('ikea/4.avif');">
+                    <div class="name">다이닝</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="best_image" style="background-image: url('ikea/5.avif');">
+                    <div class="name">거실</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="best_image" style="background-image: url('ikea/6.avif');">
+                    <div class="name"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <script>
+        const btn = document.getElementById('btn')
+        const aside = document.getElementById('aside')
+        const closebtn = document.getElementById('closebtn')
+        
+        btn.onclick = function() {
+            aside.classList.remove('hidden')
+        }
+
+        closebtn.onclick = function() {
+            aside.classList.add('hidden')
+        }
+
+    </script>
+</body>
+</html>
