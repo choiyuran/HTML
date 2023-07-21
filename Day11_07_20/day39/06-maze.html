@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-maze.html</title>
+    <style>
+        #root { 
+            width: 500px;
+            height: 500px;
+            border: 3px solid black;
+            position: relative;
+
+        }
+        .item {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url('image/짱아.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition-duration: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>06-maze.html</h1>
+    <hr>
+    
+    <div id="root">
+        <div class="item" style="top: 0; left: 0;"></div>
+    </div>
+
+
+    <script>
+        const item = document.querySelector('.item')
+
+        function keyHandler(event) {
+            switch(event.key) {
+                case 'ArrowRight':
+                    console.log(item.style.left)            
+                    // 문자열이 숫자로만 구성되었을 때, 앞에 +기호를 붙이면 숫자형이 된다
+                    const currentLeft = +item.style.left.replace('px', '')
+                    if(currentLeft >= 400) {
+                        return;
+                    }
+                    console.log(currentLeft)            // 움직이기 전 위치
+                    item.style.left = currentLeft + 100 + 'px'
+                    // console.log(item.style.left)         // 현재 움직인 위치
+                    break;
+
+                case 'ArrowLeft':
+                    const currentRight = +item.style.left.replace('px', '')
+                    if(currentRight <= 0) {
+                        return;
+                    }
+                    console.log(currentRight)
+                    item.style.left = currentRight - 100 + 'px'
+                    break;
+                
+                case 'ArrowDown':
+                    const currentDown = +item.style.top.replace('px', '')
+                    if(currentDown >= 400) {
+                        return;
+                    }
+                    console.log(currentDown)
+                    item.style.top = currentDown + 100 + 'px'
+                    break;
+
+                case 'ArrowUp':
+                    const currentUp = +item.style.top.replace('px', '')
+                    if(currentUp <= 0) {
+                        return;
+                    }
+                    console.log(currentUp)
+                    item.style.top = currentUp - 100 + 'px'
+                    break;
+            }
+        }
+
+        document.onkeydown = keyHandler
+    </script>
+</body>
+</html>

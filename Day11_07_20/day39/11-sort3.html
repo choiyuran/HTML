@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-sort3.html</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid grey;
+        }
+        img {
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h1>11-sort3.html</h1>
+    <hr>
+
+    <div id="sort">
+        <button id="nameAsc">상품명 오름차순 정렬</button>
+        <button id="nameDesc">상품명 내림차순 정렬</button>
+        <button id="priceAsc">가격 오름차순 정렬</button>
+        <button id="priceDesc">가격 내림차순 정렬</button>
+    </div>
+    <br>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>이미지</th>
+                <th>상품명</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+
+        <tbody id="wrap">
+            <tr class="item">
+                <td><img src="homeplus/사과1.jpeg"></td>
+                <td class="name">초록사과5-8입(봉)</td>
+                <td class="price">9,990원</td>
+            </tr>
+            <tr class="item">
+                <td><img src="homeplus/사과2.jpeg"></td>
+                <td class="name">유명산지 사과(충주,문경,거창,영주) 4-6입(봉)</td>
+                <td class="price">12,990원</td>
+            </tr>
+            <tr class="item">
+                <td><img src="homeplus/사과3.jpeg"></td>
+                <td class="name">맛이 예쁜 사과 1.8KG(봉)</td>
+                <td class="price">14,990원</td>
+            </tr>
+            <tr class="item">
+                <td><img src="homeplus/사과4.jpeg"></td>
+                <td class="name">[산지직송][착한식탁]가정용 아오리 사과 5KG 꼬마소과</td>
+                <td class="price">15,100원</td>
+            </tr>
+            <tr class="item">
+                <td><img src="homeplus/사과5.jpeg"></td>
+                <td class="name">[착한식탁]바른 세척 아오리 사과 2KG 꼬마소과</td>
+                <td class="price">10,500원</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const Arrayitem = Array.from(document.querySelectorAll('#table > #wrap > .item'))
+        const nameAsc = document.getElementById('nameAsc')
+        const nameDesc = document.getElementById('nameDesc')
+        const priceAsc = document.getElementById('priceAsc')
+        const priceDesc = document.getElementById('priceDesc')
+        const wrap = document.getElementById('wrap')
+
+        nameAsc.onclick = function() {
+            Arrayitem.sort((a, b) => {
+                const na = a.querySelector('.name').innerText
+                const nb = b.querySelector('.name').innerText
+                return na > nb ? 1 : -1
+            })
+            Arrayitem.forEach(item => wrap.appendChild(item))
+        }
+        nameDesc.onclick = function() {
+            Arrayitem.sort((a, b) => {
+                const na = a.querySelector('.name').innerText
+                const nb = b.querySelector('.name').innerText
+                
+                return na < nb ? 1 : -1
+            })
+            Arrayitem.forEach(item => wrap.appendChild(item))
+        }
+
+          priceAsc.onclick = function() {
+              Arrayitem.sort((a, b) => {
+                const pa = +a.querySelector('.price').innerText.replace(',', '').replace('원', '')
+                const pb = +b.querySelector('.price').innerText.replace(',', '').replace('원', '')
+
+                return pa > pb ? 1 : -1
+              })
+               Arrayitem.forEach(item => wrap.appendChild(item))
+          }
+
+          priceDesc.onclick = function() {
+              Arrayitem.sort((a, b) => {
+                const pa = +a.querySelector('.price').innerText.replace(',', '').replace('원', '')
+                const pb = +b.querySelector('.price').innerText.replace(',', '').replace('원', '')
+                
+                return pa < pb ? 1 : -1
+              })
+               Arrayitem.forEach(item => wrap.appendChild(item))
+          }
+
+    </script>
+</body>
+</html>
