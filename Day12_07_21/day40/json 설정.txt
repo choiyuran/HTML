@@ -1,0 +1,8 @@
+확장 프로그램에서 
+1. Live Server를 설치
+2. 오른쪽 하단에 Go Live 눌러서 실행
+
+실행 안될 때
+1. Live Server에서 확장 설정에 들어감
+2. cmd창에서 내 주소 확인(ipconfig)
+3. 첫번째칸 IPv4 주소를 확장 설정에 있는 Live Server > Settings:Host에 붙여넣기

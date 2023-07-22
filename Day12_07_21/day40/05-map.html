@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-map.html</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid grey;
+        }
+        #root {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>05-map.html</h1>
+    <hr>
+
+    <table id="root"></table>
+
+    <script>
+        const arr = [
+            {name: '원빈', score: 95},
+            {name: '현빈', score: 52},
+            {name: '박현빈', score: 67},
+            {name: '김우빈', score: 50},
+            {name: '임성빈', score: 80}
+        ]
+         
+        // 점수가 60이상이면 '합격', 60미만이면 '불합격'을 추가하여
+        // 화면에 나타내주세요. div를 사용하거나 table을 사용하면 됩니다
+        const table = document.getElementById('root')
+        
+        const arr2 = arr.map(result => {
+            return {
+                name: result.name, 
+                score: result.score,
+                coment: result.score >= 60 ? '합격' : '불합격'}
+        })
+        console.log(arr2)
+        
+        for(let i = 0; i < arr2.length; i++) {
+            const tr = document.createElement('tr')
+            const td1 = document.createElement('td')
+            const td2 = document.createElement('td')
+            const td3 = document.createElement('td')
+            td1.innerText = arr2[i].name
+            td2.innerText = arr2[i].score
+            td3.innerText = arr2[i].coment
+            tr.appendChild(td1)
+            tr.appendChild(td2)
+            tr.appendChild(td3)
+            table.appendChild(tr)
+        }
+
+        
+    </script>
+</body>
+</html>
