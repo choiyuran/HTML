@@ -50,17 +50,17 @@
         console.log(arr2)
         
         const root = document.getElementById('root')
-        root.innerHTML += '<div class="item">이름</div><div>점수</div><div>결과</div>'
+        root.innerHTML += '<div class="item"><div>이름</div><div>점수</div><div>결과</div></div>'
 
         arr2.forEach(ob => {
-            // const tag = '<div class="item">'
+            // let tag = '<div class="item">'
             // tag += '<div>' + ob.name + '</div>'
             // tag += '<div>' + ob.score + '</div>'
             // tag += '<div>' + ob.result + '</div>'
             // tag += '</div>'
             // root.innerHTML += tag
 
-            let ta2 = `<div class="item">`
+            let tag2 = `<div class="item">`
             tag2 += `<div>${ob.name}</div>`
             tag2 += `<div>${ob.score}</div>`
             tag2 += `<div>${ob.result}</div>`

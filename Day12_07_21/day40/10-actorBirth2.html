@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10-actorBirth.html</title>
+    <title>10-actorBirth2.html</title>
 </head>
 <body>
-    <h1>10-actorBirth.html</h1>
+    <h1>10-actorBirth2.html</h1>
     <hr>
 
     <button id="nameAsc">이름 오름차순</button>
@@ -32,13 +32,10 @@
     <script src="actorBirth.js"></script>
     <script>
         console.log('arr의 길이 : ', arr.length)
-
         const tbody = document.querySelector('tbody')
-        const trArray = Array.from(document.querySelectorAll('tr'))
         const nameDesc = document.getElementById('nameDesc')
         const nameAsc = document.getElementById('nameAsc')
-
-        const tr = document.querySelector('tr')
+        
         tbody.innerHTML = ''            // 원래 작성되었던 태그 내용이 사라진다
         
         arr.forEach(ob => {
@@ -49,11 +46,19 @@
                 tag += `</tr>`
                 tbody.innerHTML += tag
             })
-            window.onload = load
+            // window.onload = load
                 
+        nameAsc.onclick = function() {
+            const trArray = Array.from(document.querySelectorAll('tbody > tr'))
+            console.log(trArray)
             
-
-            
+            trArray.sort((a,b) => {
+                return a.name > b.name ? 1 : -1 
+            })
+            console.log(trArray)
+            trArray.forEach(tr => tbody.appendChild(tr))
+        }
+        
     </script>
 </body>
 </html>
