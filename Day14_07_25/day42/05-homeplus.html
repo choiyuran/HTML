@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-homeplus.html</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        #filter {
+            padding: 10px;
+            margin: 10px 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        .blueberry {
+            background-color: slateblue;
+        }
+        .strawberry {
+            background-color: pink;
+        }
+        .cherry {
+            background-color: crimson;
+        }
+        .etc {
+            background-color: yellow;
+        }
+        .hidden2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>04-homeplus.html</h1>
+    <hr>
+    <div class="wrap">
+        <div class="left">
+            <fieldset id="categoryFilter">
+                <legend>카테고리</legend>
+                <ul>
+                    <li><label><input type="checkbox" id="blueberry">블루베리</label></li>
+                    <li><label><input type="checkbox" id="strawberry">딸기</label></li>
+                    <li><label><input type="checkbox" id="cherry">체리</label></li>
+                    <li><label><input type="checkbox" id="etc">기타</label></li>
+                </ul>
+            </fieldset>
+
+            <fieldset id="priceFilter">
+                <legend>금액</legend>
+                <ul>
+                    <li><label><input type="checkbox" start="0" id="u10th">0 ~ 10000</label></li>
+                    <li><label><input type="checkbox" start="10000" id="o10th">10000 ~</label></li>
+                    <li><label><input type="checkbox" start="20000" id="o20th">20000 ~</label></li>
+                    <li><label><input type="checkbox" start="30000" id="o30th">30000 ~</label></li>
+                    <li><label><input type="checkbox" start="40000" id="o40th">40000 ~</label></li>
+                    <li><label><input type="checkbox" start="50000" id="o50th">50000 ~</label></li>
+                </ul>
+            </fieldset>
+        </div>
+    </div>
+    <div class="right">
+        <table>
+            <thead>
+                <tr>
+                    <th>상품명</th>
+                    <th>카테고리</th>
+                    <th>가격</th>
+                    <th>평점</th>
+                    <th>판매 횟수</th>
+                    <th>리뷰 횟수</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="homeplus(berry).js"></script>
+    <script>
+        // 전체 데이터를 준비하기 위한 코드
+        const dataList = arr.map(ob => {
+            // 깊은 복사
+            // JSON.stringify(ob) : ob 객체를 JSON형식 문자열로 변환한다
+            // JSON.parse(str) : str을 JSON형식 기준으로 객체를 변환한다
+            const ob2 = JSON.parse(JSON.stringify(ob))
+            if(ob.name.includes('블루베리'))         ob2.category = '블루베리'
+            else if(ob.name.includes('딸기'))        ob2.category = '딸기'
+            else if(ob.name.includes('체리'))        ob2.category = '체리'
+            else                                     ob2.category = '기타'
+            return ob2
+        })
+        console.log(dataList[99])
+
+        // 문서 로드 시 수행하는 최초 작동
+        const tbody = document.querySelector('tbody')
+        function loadHandler() {
+            let tag = ``
+            const categoryMap = {
+                '딸기' : 'strawberry',
+                '블루베리' : 'blueberry',
+                '체리' : 'cherry',
+                '기타' : 'etc'
+            }
+
+            dataList.forEach(ob => {
+            
+                if(0 < +ob.price.innerText && +ob.price.innerText < 10000) {
+                    tag += `<tr class="${categoryMap[ob.category]} u10th">`        
+                    }
+                else if(+ob.price.innerText < 20000) {
+                    tag += `<tr class="${categoryMap[ob.category]} o10th">`
+                }
+                else if(+ob.price.innerText < 30000) {
+                    tag += `<tr class="${categoryMap[ob.category]} o20th">`
+                }
+                else if(+ob.price.innerText < 40000) {
+                    tag += `<tr class="${categoryMap[ob.category]} o30th">`
+                }
+                else if(+ob.price.innerText < 50000) {
+                    tag += `<tr class="${categoryMap[ob.category]} o40th">`
+                }
+                else {
+                    tag += `<tr class="${categoryMap[ob.category]} o50th">`
+                }
+                tag += `    <td class="name">${ob.name}</td>`
+                tag += `    <td class="category">${ob.category}</td>`
+                tag += `    <td class="price">${ob.price}</td>`
+                tag += `    <td class="grade">${ob.grade}</td>`
+                tag += `    <td class="salesCount">${ob.salesCount}</td>`
+                tag += `    <td class="reviewCount">${ob.reviewCount}</td>`
+                tag += `</tr>`
+            })
+            tbody.innerHTML += tag
+        }
+        window.onload = loadHandler
+
+
+        const categoryboxArray = Array.from(document.querySelectorAll('#categoryFilter input[type="checkbox"]'))
+        function checkBoxHandler(event) {
+            const checkedBoxs = categoryboxArray.filter(box => box.checked).map(box => box.id)
+            console.log(checkedBoxs)
+
+            document.querySelectorAll('tbody > tr').forEach(tr => {
+                const flag = checkedBoxs.includes(tr.classList[0])
+                if(checkedBoxs.length == 0) tr.classList.remove('hidden')
+                else if(flag)               tr.classList.remove('hidden')
+                else                        tr.classList.add('hidden')
+            })
+        }
+        categoryboxArray.forEach(box => box.onclick = checkBoxHandler)
+
+        // 가격을 이용한 필터링
+        const priceArray = Array.from(document.querySelectorAll('#priceFilter input[type="checkbox"]'))
+        function priceFilter(event) {
+            const checkPrice = priceArray.filter(box => box.checked).map(box => box.id)
+            console.log(checkPrice)
+
+            document.querySelectorAll('tbody > tr').forEach(tr => {
+
+                const flag = checkPrice.includes(tr.classList[1])
+                if(checkPrice.length == 0) tr.classList.remove('hidden2')
+                else if(flag)              tr.classList.remove('hidden2')
+                else                       tr.classList.add('hidden2')
+            })
+        }
+        priceArray.forEach(box => box.onclick = priceFilter)
+        
+
+    </script>
+
+</body>
+</html>
